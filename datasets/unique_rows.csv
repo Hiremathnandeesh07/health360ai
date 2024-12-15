@@ -1,0 +1,199 @@
+
+itching, skin_rash, nodal_skin_eruptions, dischromic_patches
+ skin_rash, nodal_skin_eruptions, dischromic_patches
+itching, nodal_skin_eruptions, dischromic_patches
+itching, skin_rash, dischromic_patches
+itching, skin_rash, nodal_skin_eruptions
+ continuous_sneezing, shivering, chills, watering_from_eyes
+ shivering, chills, watering_from_eyes
+ continuous_sneezing, chills, watering_from_eyes
+ continuous_sneezing, shivering, watering_from_eyes
+ continuous_sneezing, shivering, chills
+ stomach_pain, acidity, ulcers_on_tongue, vomiting
+ stomach_pain, ulcers_on_tongue, vomiting, cough
+ stomach_pain, acidity, vomiting, cough
+ stomach_pain, acidity, ulcers_on_tongue, cough
+ acidity, ulcers_on_tongue, vomiting, cough
+itching, vomiting, yellowish_skin, nausea
+ vomiting, yellowish_skin, nausea, loss_of_appetite
+itching, yellowish_skin, nausea, loss_of_appetite
+itching, vomiting, nausea, loss_of_appetite
+itching, vomiting, yellowish_skin, loss_of_appetite
+itching, skin_rash, stomach_pain, burning_micturition
+itching, stomach_pain, burning_micturition, spotting_ urination
+itching, skin_rash, burning_micturition, spotting_ urination
+itching, skin_rash, stomach_pain, spotting_ urination
+ skin_rash, stomach_pain, burning_micturition, spotting_ urination
+ vomiting, loss_of_appetite, abdominal_pain, passage_of_gases
+ vomiting, indigestion, abdominal_pain, passage_of_gases
+ indigestion, loss_of_appetite, abdominal_pain, passage_of_gases
+ vomiting, indigestion, loss_of_appetite, passage_of_gases
+ vomiting, indigestion, loss_of_appetite, abdominal_pain
+ muscle_wasting, patches_in_throat, high_fever, extra_marital_contacts
+ patches_in_throat, high_fever, extra_marital_contacts
+ muscle_wasting, high_fever, extra_marital_contacts
+ muscle_wasting, patches_in_throat, extra_marital_contacts
+ muscle_wasting, patches_in_throat, high_fever
+ fatigue, weight_loss, restlessness, lethargy
+ weight_loss, restlessness, lethargy, irregular_sugar_level
+ fatigue, restlessness, lethargy, irregular_sugar_level
+ fatigue, weight_loss, lethargy, irregular_sugar_level
+ fatigue, weight_loss, restlessness, irregular_sugar_level
+ vomiting, sunken_eyes, dehydration, diarrhoea
+ sunken_eyes, dehydration, diarrhoea
+ vomiting, dehydration, diarrhoea
+ vomiting, sunken_eyes, diarrhoea
+ vomiting, sunken_eyes, dehydration
+ fatigue, cough, high_fever, breathlessness
+ cough, high_fever, breathlessness, family_history
+ fatigue, high_fever, breathlessness, family_history
+ fatigue, cough, breathlessness, family_history
+ fatigue, cough, high_fever, family_history
+ headache, chest_pain, dizziness, loss_of_balance
+ chest_pain, dizziness, loss_of_balance, lack_of_concentration
+ headache, dizziness, loss_of_balance, lack_of_concentration
+ headache, chest_pain, loss_of_balance, lack_of_concentration
+ headache, chest_pain, dizziness, lack_of_concentration
+ acidity, indigestion, headache, blurred_and_distorted_vision
+ indigestion, headache, blurred_and_distorted_vision, excessive_hunger
+ acidity, headache, blurred_and_distorted_vision, excessive_hunger
+ acidity, indigestion, blurred_and_distorted_vision, excessive_hunger
+ acidity, indigestion, headache, excessive_hunger
+ back_pain, weakness_in_limbs, neck_pain, dizziness
+ weakness_in_limbs, neck_pain, dizziness, loss_of_balance
+ back_pain, neck_pain, dizziness, loss_of_balance
+ back_pain, weakness_in_limbs, dizziness, loss_of_balance
+ back_pain, weakness_in_limbs, neck_pain, loss_of_balance
+ vomiting, headache, weakness_of_one_body_side, altered_sensorium
+ headache, weakness_of_one_body_side, altered_sensorium
+ vomiting, weakness_of_one_body_side, altered_sensorium
+ vomiting, headache, altered_sensorium
+ vomiting, headache, weakness_of_one_body_side
+itching, vomiting, fatigue, weight_loss
+ vomiting, fatigue, weight_loss, high_fever
+itching, fatigue, weight_loss, high_fever
+itching, vomiting, weight_loss, high_fever
+itching, vomiting, fatigue, high_fever
+ chills, vomiting, high_fever, sweating
+ vomiting, high_fever, sweating, headache
+ chills, high_fever, sweating, headache
+ chills, vomiting, sweating, headache
+ chills, vomiting, high_fever, headache
+itching, skin_rash, fatigue, lethargy
+ skin_rash, fatigue, lethargy, high_fever
+itching, fatigue, lethargy, high_fever
+itching, skin_rash, lethargy, high_fever
+itching, skin_rash, fatigue, high_fever
+ skin_rash, chills, joint_pain, vomiting
+ chills, joint_pain, vomiting, fatigue
+ skin_rash, joint_pain, vomiting, fatigue
+ skin_rash, chills, vomiting, fatigue
+ skin_rash, chills, joint_pain, fatigue
+ chills, vomiting, fatigue, high_fever
+ chills, fatigue, high_fever, headache
+ joint_pain, vomiting, yellowish_skin, dark_urine
+ vomiting, yellowish_skin, dark_urine, nausea
+ joint_pain, yellowish_skin, dark_urine, nausea
+ joint_pain, vomiting, dark_urine, nausea
+ joint_pain, vomiting, yellowish_skin, nausea
+itching, fatigue, lethargy, yellowish_skin
+ fatigue, lethargy, yellowish_skin, dark_urine
+itching, lethargy, yellowish_skin, dark_urine
+itching, fatigue, yellowish_skin, dark_urine
+itching, fatigue, lethargy, dark_urine
+ fatigue, yellowish_skin, nausea, loss_of_appetite
+ yellowish_skin, nausea, loss_of_appetite, yellowing_of_eyes
+ fatigue, nausea, loss_of_appetite, yellowing_of_eyes
+ fatigue, yellowish_skin, loss_of_appetite, yellowing_of_eyes
+ fatigue, yellowish_skin, nausea, yellowing_of_eyes
+ joint_pain, vomiting, fatigue, yellowish_skin
+ vomiting, fatigue, yellowish_skin, dark_urine
+ joint_pain, fatigue, yellowish_skin, dark_urine
+ joint_pain, vomiting, fatigue, dark_urine
+ joint_pain, vomiting, fatigue, high_fever
+ vomiting, fatigue, high_fever, yellowish_skin
+ joint_pain, fatigue, high_fever, yellowish_skin
+ joint_pain, vomiting, high_fever, yellowish_skin
+ vomiting, yellowish_skin, abdominal_pain, swelling_of_stomach
+ yellowish_skin, abdominal_pain, swelling_of_stomach, distention_of_abdomen
+ vomiting, abdominal_pain, swelling_of_stomach, distention_of_abdomen
+ vomiting, yellowish_skin, swelling_of_stomach, distention_of_abdomen
+ vomiting, yellowish_skin, abdominal_pain, distention_of_abdomen
+ chills, vomiting, fatigue, weight_loss
+ vomiting, fatigue, weight_loss, cough
+ chills, fatigue, weight_loss, cough
+ chills, vomiting, weight_loss, cough
+ chills, vomiting, fatigue, cough
+ continuous_sneezing, chills, fatigue, cough
+ chills, fatigue, cough, high_fever
+ continuous_sneezing, fatigue, cough, high_fever
+ continuous_sneezing, chills, cough, high_fever
+ continuous_sneezing, chills, fatigue, high_fever
+ chills, cough, high_fever, breathlessness
+ chills, fatigue, high_fever, breathlessness
+ chills, fatigue, cough, breathlessness
+ constipation, pain_during_bowel_movements, pain_in_anal_region, bloody_stool
+ pain_during_bowel_movements, pain_in_anal_region, bloody_stool, irritation_in_anus
+ constipation, pain_in_anal_region, bloody_stool, irritation_in_anus
+ constipation, pain_during_bowel_movements, bloody_stool, irritation_in_anus
+ constipation, pain_during_bowel_movements, pain_in_anal_region, irritation_in_anus
+ vomiting, breathlessness, sweating, chest_pain
+ breathlessness, sweating, chest_pain
+ vomiting, sweating, chest_pain
+ vomiting, breathlessness, chest_pain
+ vomiting, breathlessness, sweating
+ fatigue, cramps, bruising, obesity
+ cramps, bruising, obesity, swollen_legs
+ fatigue, bruising, obesity, swollen_legs
+ fatigue, cramps, obesity, swollen_legs
+ fatigue, cramps, bruising, swollen_legs
+ fatigue, weight_gain, cold_hands_and_feets, mood_swings
+ weight_gain, cold_hands_and_feets, mood_swings, lethargy
+ fatigue, cold_hands_and_feets, mood_swings, lethargy
+ fatigue, weight_gain, mood_swings, lethargy
+ fatigue, weight_gain, cold_hands_and_feets, lethargy
+ fatigue, mood_swings, weight_loss, restlessness
+ mood_swings, weight_loss, restlessness, sweating
+ fatigue, weight_loss, restlessness, sweating
+ fatigue, mood_swings, restlessness, sweating
+ fatigue, mood_swings, weight_loss, sweating
+ vomiting, fatigue, anxiety, sweating
+ fatigue, anxiety, sweating, headache
+ vomiting, anxiety, sweating, headache
+ vomiting, fatigue, sweating, headache
+ vomiting, fatigue, anxiety, headache
+ joint_pain, neck_pain, knee_pain, hip_joint_pain
+ neck_pain, knee_pain, hip_joint_pain, swelling_joints
+ joint_pain, knee_pain, hip_joint_pain, swelling_joints
+ joint_pain, neck_pain, hip_joint_pain, swelling_joints
+ joint_pain, neck_pain, knee_pain, swelling_joints
+ muscle_weakness, stiff_neck, swelling_joints, movement_stiffness
+ stiff_neck, swelling_joints, movement_stiffness, painful_walking
+ muscle_weakness, swelling_joints, movement_stiffness, painful_walking
+ muscle_weakness, stiff_neck, movement_stiffness, painful_walking
+ muscle_weakness, stiff_neck, swelling_joints, painful_walking
+ vomiting, headache, nausea, spinning_movements
+ headache, nausea, spinning_movements, loss_of_balance
+ vomiting, nausea, spinning_movements, loss_of_balance
+ vomiting, headache, spinning_movements, loss_of_balance
+ vomiting, headache, nausea, loss_of_balance
+ skin_rash, pus_filled_pimples, blackheads, scurring
+ pus_filled_pimples, blackheads, scurring
+ skin_rash, blackheads, scurring
+ skin_rash, pus_filled_pimples, scurring
+ skin_rash, pus_filled_pimples, blackheads
+ burning_micturition, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine
+ bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine
+ burning_micturition, foul_smell_of urine, continuous_feel_of_urine
+ burning_micturition, bladder_discomfort, continuous_feel_of_urine
+ burning_micturition, bladder_discomfort, foul_smell_of urine
+ skin_rash, joint_pain, skin_peeling, silver_like_dusting
+ joint_pain, skin_peeling, silver_like_dusting, small_dents_in_nails
+ skin_rash, skin_peeling, silver_like_dusting, small_dents_in_nails
+ skin_rash, joint_pain, silver_like_dusting, small_dents_in_nails
+ skin_rash, joint_pain, skin_peeling, small_dents_in_nails
+ skin_rash, high_fever, blister, red_sore_around_nose
+ high_fever, blister, red_sore_around_nose, yellow_crust_ooze
+ skin_rash, blister, red_sore_around_nose, yellow_crust_ooze
+ skin_rash, high_fever, red_sore_around_nose, yellow_crust_ooze
+ skin_rash, high_fever, blister, yellow_crust_ooze

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .symptoms-list {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .symptoms-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .symptoms-list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #submitButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submitButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Symptom Search</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Type to search symptoms...">
+    </div>
+    <ul id="symptomsList" class="symptoms-list"></ul>
+    <div class="submit-container">
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <script>
+        // Symptoms array (to be replaced by CSV data)
+        const symptoms = [];
+
+        // Load symptoms from the CSV file
+        fetch('../datasets/unique_rows.csv')
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n');
+                rows.forEach(row => {
+                    const symptom = row.trim();
+                    if (symptom) {
+                        symptoms.push(symptom);
+                    }
+                });
+                displaySymptoms(symptoms);
+            })
+            .catch(error => console.error('Error loading CSV:', error));
+
+        // Select the input, list, and submit button elements
+        const searchInput = document.getElementById('searchInput');
+        const symptomsList = document.getElementById('symptomsList');
+        const submitButton = document.getElementById('submitButton');
+
+        // Function to display symptoms in the list
+        const displaySymptoms = (filteredSymptoms) => {
+            symptomsList.innerHTML = '';
+            filteredSymptoms.forEach(symptom => {
+                const li = document.createElement('li');
+                li.textContent = symptom;
+                li.addEventListener('click', () => {
+                    searchInput.value = symptom;
+                    symptomsList.innerHTML = ''; // Clear the list after selecting
+                });
+                symptomsList.appendChild(li);
+            });
+        };
+
+        // Add event listener for input changes
+        searchInput.addEventListener('input', () => {
+            const searchText = searchInput.value.toLowerCase();
+            const filteredSymptoms = symptoms.filter(symptom =>
+                symptom.toLowerCase().includes(searchText)
+            );
+            displaySymptoms(filteredSymptoms);
+        });
+
+        // Add click event listener for the submit button
+        submitButton.addEventListener('click', () => {
+            alert(`You selected: ${searchInput.value}`);
+        });
+    </script>
+</body>
+</html>

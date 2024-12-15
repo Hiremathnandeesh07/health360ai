@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+<!--        -->
+<!--        /* Custom scrollbar for chat box */-->
+<!--        .custom-scrollbar::-webkit-scrollbar {-->
+<!--            width: 6px;-->
+<!--        }-->
+<!--        .custom-scrollbar::-webkit-scrollbar-track {-->
+<!--            background: #f1f1f1;-->
+<!--        }-->
+<!--        .custom-scrollbar::-webkit-scrollbar-thumb {-->
+<!--            background: #4299e1;-->
+<!--            border-radius: 3px;-->
+<!--        }-->
+<!--        .custom-scrollbar::-webkit-scrollbar-thumb:hover {-->
+<!--            background: #2c5282;-->
+<!--        }-->
+
+<!--        /* Message animations */-->
+<!--        @keyframes fadeIn {-->
+<!--            from { opacity: 0; transform: translateY(10px); }-->
+<!--            to { opacity: 1; transform: translateY(0); }-->
+<!--        }-->
+
+<!--        .message {-->
+<!--            animation: fadeIn 0.3s ease-out;-->
+<!--        }-->
+
+<!--        .user-message {-->
+<!--    background-color: #f0fdf4;-->
+<!--    border-radius: 12px 12px 0 12px;-->
+<!--}-->
+
+<!--.bot-message {-->
+<!--    background-color: #e6f4f1;-->
+<!--    border-radius: 12px 12px 12px 0;-->
+<!--}-->
+        html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+<style>
+    /* Custom scrollbar for chat box */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #4299e1;
+        border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #2c5282;
+    }
+
+    /* Remove extra body margins */
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Message animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message {
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    .user-message {
+        background-color: #f0fdf4;
+        border-radius: 12px 12px 0 12px;
+    }
+
+    .bot-message {
+        background-color: #e6f4f1;
+        border-radius: 12px 12px 12px 0;
+    }
+        .chat-container {
+    margin-top: -40px; /* Adjust value as needed */
+}
+
+</style>
+
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen">
+    <nav class="bg-gradient-to-r from-green-600 to-green-400 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider">
+                Health360 AI
+            </div>
+            <div class="space-x-4">
+                <a href="/" class="hover:text-green-200 transition">Home</a>
+                <a href="/about" class="hover:text-green-200 transition">About</a>
+                <a href="/contact" class="hover:text-green-200 transition">Contact</a>
+                <a href="/walkthrough" class="hover:text-green-200 transition">Walk Through</a>
+                <a href="/firstaid" class="hover:text-green-200 transition">First Aid</a>
+                <a href="/developer" class="hover:text-green-200 transition">Developer</a>
+                <a href="/blog" class="hover:text-green-200 transition">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center p-4 chat-container">
+        <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100 transform transition-all hover:scale-[1.02]">
+            <div class="bg-gradient-to-r from-green-600 to-green-400 text-white p-4 shadow-md flex items-center justify-center space-x-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+    <h2 class="text-2xl font-semibold">Doctor Chatbot</h2>
+</div>
+
+
+         <div
+    id="chat-box"
+    class="h-[400px] p-4 overflow-y-auto bg-green-50 custom-scrollbar space-y-3 flex flex-col"
+></div>
+            <div class="p-4 bg-white border-t border-blue-100">
+                <div class="flex space-x-2">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Ask a medical question..."
+                        class="flex-grow px-4 py-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-gray-700"
+                    >
+                    <button
+    id="send-btn"
+    class="bg-green-600 text-white px-5 py-3 rounded-lg hover:bg-green-700 transition duration-200 flex items-center space-x-2 group"
+>
+    <span>Send</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+    </svg>
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendMessage(sender, message) {
+            const chatBox = document.getElementById("chat-box");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", "p-3", "max-w-[90%]", "text-sm");
+
+            if (sender === "You") {
+                messageDiv.classList.add("user-message", "self-end", "bg-blue-100", "text-blue-900");
+            } else {
+                messageDiv.classList.add("bot-message", "self-start", "bg-blue-50", "text-blue-800");
+            }
+
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        $(document).ready(function () {
+        appendMessage("Mr.Doctor Bot ", "Hello! How can I assist you with your health today?");
+
+            $("#send-btn").click(function () {
+                const userInput = $("#user-input").val().trim();
+                if (!userInput) return;
+
+                appendMessage("You", userInput);
+
+                $.ajax({
+                    url: "/chat",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ message: userInput }),
+                    success: function (response) {
+                        appendMessage("Bot", response.response);
+                        $("#user-input").val("");
+                    },
+                    error: function () {
+                        appendMessage("Bot", "Sorry, something went wrong. Please try again.");
+                    },
+                });
+            });
+
+            $("#user-input").keypress(function (e) {
+                if (e.which === 13) {
+                    $("#send-btn").click();
+                }
+            });
+        });
+
+
+
+
+    </script>
+</body>
+</html>

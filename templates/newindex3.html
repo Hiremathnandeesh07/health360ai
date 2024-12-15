@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health360 AI - Symptom Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+        body, html {
+            font-family: 'Montserrat', sans-serif;
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6eef3 100%);
+        }
+
+        .full-height {
+            min-height: 100vh;
+        }
+
+        .gradient-border {
+            border: 2px solid transparent;
+            border-image: linear-gradient(to right, #2ecc71 0%, #27ae60 100%);
+            border-image-slice: 1;
+        }
+
+        .symptom-item {
+            transition: all 0.3s ease;
+        }
+
+        .symptom-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(to right, #e67e22 0%, #d35400 100%);
+            color: white;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .image-zoom {
+            transition: transform 0.3s ease;
+        }
+
+        .image-zoom:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .symptom-list {
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar */
+        .symptom-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .symptom-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .symptom-list::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #2ecc71 0%, #27ae60 100%);
+            border-radius: 4px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="full-height flex flex-col">
+        <nav class="bg-gradient-to-r from-green-600 to-green-400 text-white p-4 shadow-md">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-2xl font-bold tracking-wider">
+                    Health360 AI
+                </div>
+                <div class="space-x-4">
+                    <a href="/" class="hover:text-green-200 transition">Home</a>
+                    <a href="/about" class="hover:text-green-200 transition">About</a>
+                    <a href="/contact" class="hover:text-green-200 transition">Contact</a>
+                    <a href="/walkthrough" class="hover:text-green-200 transition">Walk Through</a>
+                    <a href="/firstaid" class="hover:text-green-200 transition">First Aid</a>
+                    <a href="/developer" class="hover:text-green-200 transition">Developer</a>
+                    <a href="/blog" class="hover:text-green-200 transition">Blog</a>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mx-auto flex-grow flex items-center justify-center px-4 py-8">
+            <div class="w-full max-w-6xl bg-white rounded-xl shadow-2xl overflow-hidden">
+                <div class="flex">
+                    <!-- Symptom Search Column -->
+                    <div class="w-1/3 bg-gray-50 p-6 border-r">
+                        <h1 class="text-3xl font-bold text-green-600 mb-4 text-center">
+                            A PREDICTIVE HEALTH ADVISOR
+                        </h1>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-6 text-center">
+                            Symptom Search
+                        </h3>
+
+                        <div class="relative mb-6">
+                            <form action="/predict" method="POST">
+                            <input
+                                type="text"
+                                id="searchInput"
+                                name="symptoms"
+                                placeholder="Type to search symptoms..."
+                                class="w-full p-3 border gradient-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+                            >
+                            <svg class="absolute right-3 top-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10">
+                                <path d="M21 21l-4.35-4.35"/>
+                                <circle cx="11" cy="11" r="8"/>
+                            </svg>
+                        </div>
+
+                        <ul id="symptomsList" class="symptom-list space-y-2 max-h-[60vh] overflow-y-auto pr-2"></ul>
+                    </div>
+
+                    <!-- Images Column -->
+                    <div class="w-2/3 p-6">
+                        <h2 class="text-2xl font-semibold text-green-600 mb-6">Symptom Images</h2>
+                        <div id="imagesContainer" class="image-grid"></div>
+
+                        <div class="text-center mt-6">
+                            <button
+                                id="submitButton"
+                                class="bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+                            >
+                                Analyze Symptoms
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const symptoms = [];
+
+        fetch('../datasets/unique_rows.csv')
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n');
+                rows.forEach(row => {
+                    const symptom = row.trim();
+                    if (symptom) {
+                        symptoms.push(symptom);
+                    }
+                });
+                displaySymptoms(symptoms);
+            })
+            .catch(error => console.error('Error loading CSV:', error));
+
+        const searchInput = document.getElementById('searchInput');
+        const symptomsList = document.getElementById('symptomsList');
+        const imagesContainer = document.getElementById('imagesContainer');
+        const submitButton = document.getElementById('submitButton');
+
+        const displaySymptoms = (filteredSymptoms) => {
+            symptomsList.innerHTML = '';
+            filteredSymptoms.forEach(symptom => {
+                const li = document.createElement('li');
+                li.textContent = symptom;
+                li.classList.add('symptom-item', 'p-2', 'bg-white', 'rounded', 'cursor-pointer', 'hover:bg-green-100', 'border', 'text-sm');
+                li.addEventListener('click', () => {
+                    searchInput.value = symptom;
+                    symptomsList.innerHTML = '';
+                });
+                li.addEventListener('mouseover', () => {
+                    displayImages(symptom);
+                });
+                symptomsList.appendChild(li);
+            });
+        };
+
+        const displayImages = (symptom) => {
+            imagesContainer.innerHTML = '';
+            const symptomsArray = symptom.split(', ');
+            symptomsArray.forEach(symptom => {
+                const img = document.createElement('img');
+                img.src = `/static/images/${symptom.replace(/ /g, '_')}.jpg`;
+                img.alt = symptom;
+                img.classList.add('image-zoom', 'w-full', 'h-48', 'object-cover', 'rounded-lg', 'shadow-md');
+                imagesContainer.appendChild(img);
+            });
+        };
+
+        searchInput.addEventListener('input', () => {
+            const searchText = searchInput.value.toLowerCase();
+            const filteredSymptoms = symptoms.filter(symptom =>
+                symptom.toLowerCase().includes(searchText)
+            );
+            displaySymptoms(filteredSymptoms);
+        });
+
+        submitButton.addEventListener('click', () => {
+            alert(`Analyzing symptoms for: ${searchInput.value}`);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

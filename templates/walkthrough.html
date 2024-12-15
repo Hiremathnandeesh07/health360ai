@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Recommendation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-12 bg-white rounded-xl shadow-lg p-8">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4 flex items-center justify-center">
+                <i class="fas fa-heartbeat mr-4 text-red-500"></i>
+                HEALTH 360 AI
+            </h1>
+            <p class="text-gray-600 text-xl">Intelligent Health Advisor Work Flow</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="space-y-8">
+            <!-- User Input Section -->
+            <section id="user-input" class="section-card">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-user-edit text-blue-500 mr-3 text-2xl"></i>
+                    <h2 class="text-2xl font-semibold text-blue-700">User Input</h2>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <p class="text-gray-600 mb-4">Patients enter their symptoms through an intuitive interface.</p>
+                    <div class="border-2 border-dashed border-blue-200 bg-blue-50 rounded-lg p-6 text-center">
+                        <div class="text-blue-400 text-lg">Interactive Symptom Input Form</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model Training and Dataset Section -->
+            <section id="model-training" class="section-card">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-database text-orange-500 mr-3 text-2xl"></i>
+                    <h2 class="text-2xl font-semibold text-orange-700">Model Training and Datasets</h2>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <p class="text-gray-600 mb-4">
+                        The model is built using the <strong>Support Vector Classifier (SVC)</strong> algorithm. The training dataset includes disease symptoms, descriptions, precautions, medications, and diet recommendations.
+                    </p>
+                    <div class="mb-4">
+     <p class="text-gray-600 font-semibold">Here are the datasets used for training:</p>
+     <div class="overflow-x-auto border-2 border-gray-300 bg-gray-100 rounded-lg max-h-64">
+           <table class="table-auto min-w-full text-sm text-left text-gray-800">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="px-4 py-2">Disease</th>
+                    <th class="px-4 py-2">Symptom 1</th>
+                    <th class="px-4 py-2">Symptom 2</th>
+                    <th class="px-4 py-2">Symptom 3</th>
+                    <th class="px-4 py-2">Symptom 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">Fungal infection</td>
+                    <td class="border px-4 py-2">itching</td>
+                    <td class="border px-4 py-2">skin_rash</td>
+                    <td class="border px-4 py-2">nodal_skin_eruptions</td>
+                    <td class="border px-4 py-2">dischromic_patches</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Fungal infection</td>
+                    <td class="border px-4 py-2">skin_rash</td>
+                    <td class="border px-4 py-2">nodal_skin_eruptions</td>
+                    <td class="border px-4 py-2">dischromic_patches</td>
+                    <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Fungal infection</td>
+                    <td class="border px-4 py-2">itching</td>
+                    <td class="border px-4 py-2">nodal_skin_eruptions</td>
+                    <td class="border px-4 py-2">dischromic_patches</td>
+                    <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Fungal infection</td>
+                    <td class="border px-4 py-2">itching</td>
+                    <td class="border px-4 py-2">skin_rash</td>
+                    <td class="border px-4 py-2">dischromic_patches</td>
+                    <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Fungal infection</td>
+                    <td class="border px-4 py-2">itching</td>
+                    <td class="border px-4 py-2">skin_rash</td>
+                    <td class="border px-4 py-2">nodal_skin_eruptions</td>
+                    <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Allergy</td>
+                    <td class="border px-4 py-2">continuous_sneezing</td>
+                    <td class="border px-4 py-2">shivering</td>
+                    <td class="border px-4 py-2">chills</td>
+                    <td class="border px-4 py-2">watering_from_eyes</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Allergy</td>
+                    <td class="border px-4 py-2">shivering</td>
+                    <td class="border px-4 py-2">chills</td>
+                    <td class="border px-4 py-2">watering_from_eyes</td>
+                    <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">GERD</td>
+                    <td class="border px-4 py-2">stomach_pain</td>
+                    <td class="border px-4 py-2">acidity</td>
+                    <td class="border px-4 py-2">ulcers_on_tongue</td>
+                    <td class="border px-4 py-2">vomiting</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">GERD</td>
+                    <td class="border px-4 py-2">stomach_pain</td>
+                    <td class="border px-4 py-2">ulcers_on_tongue</td>
+                    <td class="border px-4 py-2">vomiting</td>
+                    <td class="border px-4 py-2">cough</td>
+                </tr>
+                <tr>
+  <td class="border px-4 py-2">Fungal infection</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">dischromic_patches</td>
+  <td class="border px-4 py-2"></td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">stomach_pain</td>
+  <td class="border px-4 py-2">burning_micturition</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">stomach_pain</td>
+  <td class="border px-4 py-2">burning_micturition</td>
+  <td class="border px-4 py-2">spotting_ urination</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">stomach_pain</td>
+  <td class="border px-4 py-2">burning_micturition</td>
+  <td class="border px-4 py-2">spotting_ urination</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">burning_micturition</td>
+  <td class="border px-4 py-2">spotting_ urination</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">stomach_pain</td>
+  <td class="border px-4 py-2">spotting_ urination</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Drug Reaction</td>
+  <td class="border px-4 py-2">itching</td>
+  <td class="border px-4 py-2">skin_rash</td>
+  <td class="border px-4 py-2">stomach_pain</td>
+  <td class="border px-4 py-2">burning_micturition</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">passage_of_gases</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">Peptic ulcer diseae</td>
+  <td class="border px-4 py-2">vomiting</td>
+  <td class="border px-4 py-2">indigestion</td>
+  <td class="border px-4 py-2">loss_of_appetite</td>
+  <td class="border px-4 py-2">abdominal_pain</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">AIDS</td>
+  <td class="border px-4 py-2">muscle_wasting</td>
+  <td class="border px-4 py-2">patches_in_throat</td>
+  <td class="border px-4 py-2">high_fever</td>
+  <td class="border px-4 py-2">extra_marital_contacts</td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">AIDS</td>
+  <td class="border px-4 py-2">patches_in_throat</td>
+  <td class="border px-4 py-2">high_fever</td>
+  <td class="border px-4 py-2">extra_marital_contacts</td>
+  <td class="border px-4 py-2"></td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">AIDS</td>
+  <td class="border px-4 py-2">muscle_wasting</td>
+  <td class="border px-4 py-2">high_fever</td>
+  <td class="border px-4 py-2">extra_marital_contacts</td>
+  <td class="border px-4 py-2"></td>
+</tr>
+<tr>
+  <td class="border px-4 py-2">AIDS</td>
+  <td class="border px-4 py-2">muscle_wasting</td>
+  <td class="border px-4 py-2">patches_in_throat</td>
+  <td class="border px-4 py-2">extra_marital_contacts</td>
+  <td class="border px-4 py-2"></td>
+</tr>
+                <!-- Add more rows as per the dataset -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<pre>
+<code># Example: Dataset Loading
+import pandas as pd
+symptoms_df = pd.read_csv("datasets/symptoms.csv")
+precautions_df = pd.read_csv("datasets/precautions.csv")</code>
+                    </pre>
+                </div>
+            </section>
+<!-- Data Preprocessing Section -->
+<section id="data-preprocessing" class="section-card">
+    <div class="flex items-center mb-4">
+        <i class="fas fa-cogs text-green-500 mr-3 text-2xl"></i>
+        <h2 class="text-2xl font-semibold text-green-700">Data Preprocessing</h2>
+    </div>
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <p class="text-gray-600 mb-4">Symptoms are transformed into a machine-readable format.</p>
+        <pre class="bg-gray-100 rounded-lg p-4 overflow-x-auto text-sm text-gray-800">
+<code># Preprocessing Symptoms
+input_vector = np.zeros(len(symptoms_dict))
+for symptom in patient_symptoms:
+    input_vector[symptoms_dict[symptom]] = 1</code>
+        </pre>
+
+       <div style="width: 1500px; height: 400px; overflow-y: scroll;">
+  <img src="static/images/dataaa.png" alt="Scrollable Image" style="width: auto; height: auto;">
+</div>
+    </div>
+</section>
+
+
+
+            <!-- Model Prediction Section -->
+            <section id="model-prediction" class="section-card">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-brain text-purple-500 mr-3 text-2xl"></i>
+                    <h2 class="text-2xl font-semibold text-purple-700">Model Prediction</h2>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <p class="text-gray-600 mb-4">Machine learning model generates precise health predictions.</p>
+                    <pre class="bg-gray-100 rounded-lg p-4 overflow-x-auto text-sm text-gray-800">
+<code># SVM Classification
+from sklearn.svm import SVC
+svc = SVC(kernel='linear', probability=True)
+svc.fit(X_train, y_train)  # Training Model
+predicted = svc.predict([input_vector])</code>
+                    </pre>
+                      <div style="width: 1500px; height: 400px; overflow-y: scroll;">
+  <img src="../datasets/output.png" alt="Scrollable Image" style="width: auto; height: auto;">
+</div>
+                </div>
+            </section>
+
+            <!-- Output Retrieval Section -->
+            <section id="output-retrieval" class="section-card">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-file-medical text-red-500 mr-3 text-2xl"></i>
+                    <h2 class="text-2xl font-semibold text-red-700">Output Retrieval</h2>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <p class="text-gray-600 mb-4">Comprehensive health insights are retrieved and presented.</p>
+                    <pre class="bg-gray-100 rounded-lg p-4 overflow-x-auto text-sm text-gray-800">
+<code># Retrieving Detailed Insights
+desc = description[description['Disease'] == predicted_disease]['Description']
+precautions = precautions_df[precautions_df['Disease'] == predicted_disease]</code>
+                    </pre>
+
+                <div style="width: 1500px; height: 400px; overflow-y: scroll;">
+  <img src="../datasets/finalout.png" alt="Scrollable Image" style="width: auto; height: auto;">
+</div>
+                    </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; 2024 Medicine Recommendation System</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from(".section-card", {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                stagger: 0.3,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>

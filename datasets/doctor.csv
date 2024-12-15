@@ -1,0 +1,42 @@
+Disease,HospitalName,DoctorName,MeetingTiming,AssistantPhoneNumber
+Fungal infection,City Hospital,Dr. John Smith,9:00 AM - 12:00 PM,9876543210
+Allergy,Green Valley Clinic,Dr. Emma Brown,10:00 AM - 1:00 PM,9876543211
+GERD,HealthCare Center,Dr. William Johnson,11:00 AM - 2:00 PM,9876543212
+Chronic cholestasis,Liver Wellness Center,Dr. Sophia Davis,1:00 PM - 3:00 PM,9876543213
+Drug Reaction,MediCare Hospital,Dr. James Wilson,2:00 PM - 4:00 PM,9876543214
+Peptic ulcer disease,Gastroenterology Specialists,Dr. Olivia Taylor,3:00 PM - 5:00 PM,9876543215
+AIDS,Red Cross Health Center,Dr. Benjamin Miller,9:00 AM - 11:00 AM,9876543216
+Diabetes,Diabetes Care Clinic,Dr. Isabella Martinez,10:00 AM - 12:00 PM,9876543217
+Gastroenteritis,Digestive Health Clinic,Dr. Alexander Lee,11:00 AM - 1:00 PM,9876543218
+Bronchial Asthma,LungCare Hospital,Dr. Charlotte Thomas,12:00 PM - 3:00 PM,9876543219
+Hypertension,HeartCare Hospital,Dr. Henry Garcia,8:00 AM - 11:00 AM,9876543220
+Migraine,Neurology Specialists,Dr. Mia Martinez,9:00 AM - 12:00 PM,9876543221
+Cervical spondylosis,SpineCare Clinic,Dr. Elijah Walker,1:00 PM - 4:00 PM,9876543222
+Paralysis (brain hemorrhage),NeuroHealth Center,Dr. Amelia Hall,10:00 AM - 2:00 PM,9876543223
+Jaundice,Liver Wellness Center,Dr. Lucas Young,11:00 AM - 1:00 PM,9876543224
+Malaria,Tropical Disease Center,Dr. Grace Harris,2:00 PM - 5:00 PM,9876543225
+Chicken pox,Pediatric Clinic,Dr. Ethan Robinson,9:00 AM - 11:00 AM,9876543226
+Dengue,Tropical Disease Center,Dr. Aria Clark,12:00 PM - 3:00 PM,9876543227
+Typhoid,Infectious Disease Clinic,Dr. Liam Wright,3:00 PM - 5:00 PM,9876543228
+hepatitis A,LiverCare Center,Dr. Layla Adams,1:00 PM - 4:00 PM,9876543229
+Hepatitis B,LiverCare Center,Dr. Gabriel Mitchell,10:00 AM - 12:00 PM,9876543230
+Hepatitis C,LiverCare Center,Dr. Harper Perez,9:00 AM - 11:00 AM,9876543231
+Hepatitis D,LiverCare Center,Dr. Evelyn Hernandez,2:00 PM - 4:00 PM,9876543232
+Hepatitis E,LiverCare Center,Dr. Sebastian Carter,12:00 PM - 3:00 PM,9876543233
+Alcoholic hepatitis,Liver Wellness Center,Dr. Scarlett White,3:00 PM - 6:00 PM,9876543234
+Tuberculosis,LungCare Hospital,Dr. Owen Johnson,8:00 AM - 10:00 AM,9876543235
+Common Cold,General Health Clinic,Dr. Nora Davis,10:00 AM - 12:00 PM,9876543236
+Pneumonia,LungCare Hospital,Dr. Jackson Martinez,9:00 AM - 11:00 AM,9876543237
+Dimorphic hemmorhoids(piles),Proctology Center,Dr. Zoey Lee,1:00 PM - 4:00 PM,9876543238
+Heart attack,CardioCare Hospital,Dr. Leo Brown,2:00 PM - 5:00 PM,9876543239
+Varicose veins,Vascular Specialists,Dr. Lily Wilson,9:00 AM - 12:00 PM,9876543240
+Hypothyroidism,Endocrine Health Center,Dr. Levi Gonzalez,11:00 AM - 1:00 PM,9876543241
+Hyperthyroidism,Endocrine Health Center,Dr. Isla Nelson,12:00 PM - 3:00 PM,9876543242
+Hypoglycemia,Diabetes Care Clinic,Dr. Noah Robinson,8:00 AM - 10:00 AM,9876543243
+Osteoarthristis,JointCare Clinic,Dr. Ava Walker,10:00 AM - 12:00 PM,9876543244
+Arthritis,Rheumatology Center,Dr. Logan Harris,9:00 AM - 11:00 AM,9876543245
+(vertigo) Paroymsal Positional Vertigo,ENT Specialists,Dr. Mila Wright,1:00 PM - 3:00 PM,9876543246
+Acne,Dermatology Center,Dr. Carter Young,11:00 AM - 2:00 PM,9876543247
+Urinary tract infection,Urology Clinic,Dr. Stella Hernandez,9:00 AM - 12:00 PM,9876543248
+Psoriasis,Dermatology Center,Dr. Hudson King,10:00 AM - 1:00 PM,9876543249
+Impetigo,Dermatology Center,Dr. Aurora Hall,2:00 PM - 5:00 PM,9876543250

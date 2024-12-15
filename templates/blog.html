@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HEALTH360 AI Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shape-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative">
+    <!-- Hero Section with Wave -->
+    <div class="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 mb-12">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-down">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                    HEALTH360 AI: A Predictive Health Advisor
+                </h1>
+                <p class="text-xl text-blue-100 mb-8">
+                    Powered by Support Vector Classifier and Random Forest Classifier
+                </p>
+            </div>
+        </div>
+        <div class="custom-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor" class="text-gray-50">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 max-w-5xl">
+        <!-- Introduction -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12" data-aos="fade-up">
+            <p class="text-lg text-gray-700 leading-relaxed">
+                In the modern era of technology, providing reliable and instant healthcare solutions is paramount.
+                <span class="font-semibold text-blue-600">HEALTH360 AI</span> leverages machine learning algorithms like Support Vector Classifier and Random Forest Classifier
+                to offer a robust platform that predicts potential health issues based on user-reported symptoms.
+            </p>
+        </div>
+
+        <!-- Problem & Solution Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-right">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">The Problem</h2>
+                </div>
+                <p class="text-gray-700">
+                    Many people struggle to identify their health conditions due to overlapping symptoms.
+                    Often, individuals delay seeking medical advice due to uncertainty.
+                    This project aims to provide a fast and user-friendly tool for health predictions to bridge this gap.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-left">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">The Solution</h2>
+                </div>
+                <p class="text-gray-700">
+                    HEALTH360 AI empowers users by enabling them to input symptoms and receive probable diagnoses.
+                    By utilizing advanced machine learning models, it ensures accuracy and provides valuable health insights.
+                </p>
+            </div>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">How It Works</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">1</div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Symptom Input</h3>
+                    <p class="text-gray-600">Users can enter multiple symptoms through a seamless interface.</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">2</div>
+                    <h3 class="font-semibold text-gray-800 mb-2">ML Models</h3>
+                    <p class="text-gray-600">Uses Support Vector Classifier and Random Forest Classifier for precise predictions.</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">3</div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Prediction</h3>
+                    <p class="text-gray-600">Models analyze inputs to suggest potential diseases with confidence scores.</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">4</div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Information</h3>
+                    <p class="text-gray-600">Provides details about treatments, precautions, and more.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Key Features</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">User-Centric Design</h3>
+                        <p class="text-gray-600">Simplified navigation ensures an effortless user experience.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">High Accuracy</h3>
+                        <p class="text-gray-600">Predictive analysis is backed by advanced machine learning techniques.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Comprehensive Insights</h3>
+                        <p class="text-gray-600">Provides detailed advice including medications, diets, and precautions.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Educational Content</h3>
+                        <p class="text-gray-600">Offers curated articles on health and wellness topics for better awareness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-8 mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
+            <p class="text-blue-100 leading-relaxed">
+                HEALTH360 AI demonstrates how AI can revolutionize healthcare by bringing personalized, data-driven insights to everyone.
+                By combining accessibility and innovation, we aim to empower individuals to take charge of their health effectively.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+</body>
+</html>
