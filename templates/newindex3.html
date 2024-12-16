@@ -250,9 +250,14 @@
             displaySymptoms(filteredSymptoms);
         });
 
-        submitButton.addEventListener('click', () => {
-            alert(`Analyzing symptoms for: ${searchInput.value}`);
-        });
+          submitButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent form submission
+    if (!searchInput.value.trim()) {
+        alert('Please enter a symptom to analyze.');
+        return;
+    }
+    alert(`Analyzing symptoms for: ${searchInput.value}`);
+});
     </script>
 
 </body>
