@@ -250,8 +250,8 @@
             displaySymptoms(filteredSymptoms);
         });
 
-          submitButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent form submission
+          
+    submitButton.addEventListener('click', (event) => {
     if (!searchInput.value.trim()) {
         alert('Please enter a symptom to analyze.');
         return;
